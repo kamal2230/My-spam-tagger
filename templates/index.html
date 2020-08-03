@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NLP</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: white;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        /* position: fixed; */
+      }
+      .container {
+        position: relative;
+      }
+      .input {
+        position: absolute;
+        padding: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 900px;
+        border-radius: 5px;
+        /* transform: translate(-50%); */
+        box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+          -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+      }
+      textarea {
+        border: 1px solid black;
+        width: 700px;
+        height: 350px;
+        font-size: 18px;
+      }
+      .btn-custom {
+        margin-top: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wave"></div>
+    </div>
+    <div class="card input">
+      <h1>Tact Spam Email Tagger</h1>
+      <h5>Enter your text</h5>
+      <form action="{{url_for('spam')}}" method="POST">
+        <textarea name="usertext" id="usertext" required></textarea>
+        <div class="">
+          <button type="submit" class="btn btn-success btn-custom">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="{{url_for('static',filename='js/main.js')}}"></script>
+</html>
